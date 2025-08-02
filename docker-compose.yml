@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  stock-trend-app:
+    build: .
+    container_name: smart_stock_trend_ai
+    ports:
+      - "8050:8050"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    restart: unless-stopped

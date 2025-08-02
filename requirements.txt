@@ -1,0 +1,7 @@
+dash
+plotly
+yfinance
+pandas
+pandas-ta
+openai
+google-generativeai
