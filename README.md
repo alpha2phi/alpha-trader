@@ -1,3 +1,3 @@
  # alpha-trader 🚀
 
-A Python-only dashboard to analyze stocks using technical analysis and AI insights.
+A dashboard to analyze stocks using fundamental, technical, sentiment analysis and AI insights.
