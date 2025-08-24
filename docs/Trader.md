@@ -4,6 +4,15 @@ Always size positions using tastytrade’s “stay small” principle:
 - Max 5% of account ≈ ~$1,145 per trade.  
 - Avoid using more than ~30–40% of account at once (~$6,870–$9,160).  
 
+🔥 Priority: Always analyze my **Top 25 liquid names first**:  
+SPY, QQQ, IWM, VOO, .SPX, .XSP, TLT, GLD, XLE, XOP, SOXX, SOXL,  
+AAPL, AMZN, MSFT, NVDA, TSLA, META, GOOGL, GOOG, NFLX, AMD,  
+COST, UNH, LMT.  
+
+After those, analyze the rest of my categorized watchlist.  
+
+---
+
 Here is my Watchlist (grouped & alphabetized):  
 
 🏦 Major Index & ETF Products  
@@ -65,6 +74,7 @@ Here is my Watchlist (grouped & alphabetized):
 
 👕 Consumer & Retail  
 - COST (Costco)  
+- ETSY (Etsy)  
 - KO (Coca-Cola)  
 - LULU (Lululemon Athletica)  
 - MCD (McDonald’s)  
@@ -89,6 +99,7 @@ Here is my Watchlist (grouped & alphabetized):
 🌐 Smaller / High Growth / Speculative Tech  
 - CRCL (Circle)  
 - CRWV (CoreWeave)  
+- DUOL (Duolingo)  
 - DXYZ (Destiny Tech100)  
 - FIG (Figma)  
 - HOOD (Robinhood)  
@@ -96,6 +107,8 @@ Here is my Watchlist (grouped & alphabetized):
 - ONON (On Holding)  
 - PLTR (Palantir)  
 - RDDT (Reddit)  
+- RXT (Rackspace Technology)  
+- SYMM (Symbotic)  
 - U (Unity Software)  
 - UPST (Upstart)  
 
@@ -131,26 +144,42 @@ Here is my Watchlist (grouped & alphabetized):
 
 Guidelines for Trade & Investment Ideas:  
 
-1. **Options Trading (short-term)**  
-   - Use tastytrade rules (IVR filter, POP > 50%, defined risk for small/meme caps).  
-   - Focus on liquidity (SPY, QQQ, TSLA, NVDA, AAPL, AMZN, MSFT, NFLX, etc.).  
-   - ETFs → premium-selling preferred.  
+1. **Options Trading (short-term, focus on selling)**  
+   - Use tastytrade rules: IV Rank filter, POP > 50%, defined risk for small/meme caps.  
+   - Favor premium-selling strategies (credit spreads, iron condors, short puts).  
+   - Focus first on the **Top 25 liquid names** listed above.  
    - “Stay small”: ~5% allocation per trade.  
+   - Technical/volatility indicators to check before selling options:  
+     • **IV / IV Rank** → Elevated IV favors premium selling.  
+     • **Delta levels** → Target ~25–30 delta short strikes for high POP.  
+     • **RSI / Stochastic** → Overbought (RSI > 70) → Call credit spreads; Oversold (RSI < 30) → Put credit spreads.  
+     • **MACD** → Use for trend/momentum confirmation (bearish cross = call credit setup, bullish cross = put credit setup).  
+     • **Bollinger Bands** → Sell premium when price is stretched beyond ±2σ bands, expecting mean reversion.  
+     • **Support/Resistance** → Sell credit spreads against strong technical levels.  
+   - Spread structure rules:  
+     • Open with ~45 DTE.  
+     • Sell ~50 delta, buy ~25 delta (net ~25 delta spread).  
+     • Collect at least 33% of width in credit.  
+     • Manage winners at 50% profit, cut losses at ~100% of collected credit.  
+   - **VIX filter:**  
+     • VIX > 20 → Favor aggressive premium selling (strangles, wide spreads).  
+     • VIX 15–20 → Balanced, focus on defined risk spreads.  
+     • VIX < 15 → Favor debit spreads or long premium strategies.  
 
 2. **Mid/Long-Term Investing**  
-   - If a stock looks **undervalued** (based on valuation multiples, strong fundamentals, or sector trends), flag it as a **“Long-Term Buy Idea”**.  
+   - If a stock looks **undervalued** (valuation multiples, strong fundamentals, growth outlook), flag as a **“Long-Term Buy Idea”**.  
    - Allocate max 10% of portfolio to any one long-term stock.  
-   - Prioritize companies with strong moat, durable growth, and healthy balance sheet.  
+   - Favor companies with strong moat, durable growth, and healthy balance sheet.  
 
 ---
 
 For each ticker, return:  
 1. Market context (trend, IV Rank, earnings, catalysts, valuation check).  
-2. If options trade applies → suggest 2–3 trade ideas (strategy, strikes, expiration).  
+2. If options trade applies → suggest 2–3 trade ideas (strategy, strikes, expiration) using the indicator checklist.  
 3. If undervalued → flag as **Long-Term Buy Idea** with rationale.  
 4. Risk/reward summary (max profit, max loss, breakevens).  
 5. POP & Greeks overview.  
-6. Management plan (profit-taking target, stop-loss, roll/exit).  
+6. Management plan (profit target, stop-loss, roll/exit).  
 
 ---
 
