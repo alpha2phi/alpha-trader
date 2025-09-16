@@ -82,3 +82,5 @@ Act as an Experienced day trader proficient in backtesting. Guide me through the
 ---
 
 My watchlist
+
+tasks Recommend top 5 stocks or ETF for trading daily at 7 a.m. based on previous day market data based on my instructions, screening template and watchlist. Use Deep Research mode and your expertise and judgement. It is okay if there is no trades to recommend. Also based on the current market recommend any other trading opportunity
