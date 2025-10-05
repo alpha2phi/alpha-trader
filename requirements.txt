@@ -1,2 +1,1 @@
 moomoo-api
-ta-lib
