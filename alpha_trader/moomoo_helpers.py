@@ -5,58 +5,17 @@ from __future__ import annotations
 import ipaddress
 import os
 from pathlib import Path
-from typing import Dict, Optional, Tuple
+from typing import Dict, Optional
 
 from .config import DEFAULT_RSA_KEY_PATH 
 
-def _load_moomoo_components() -> Tuple[object, ...]:
-    """Import moomoo after pointing HOME to a writable path for its log files."""
-    from .config import PROJECT_ROOT  # local import to avoid circular
-
-    log_home = Path(PROJECT_ROOT) / ".moomoo_home"
-    log_home.mkdir(parents=True, exist_ok=True)
-
-    original_home = os.environ.get("HOME")
-    os.environ["HOME"] = str(log_home)
-    try:
-        from moomoo import (
-            OpenSecTradeContext,
-            RET_OK,
-            SecurityFirm,
-            SysConfig,
-            TrdAccStatus,
-            TrdAccType,
-            TrdMarket,
-            TrdEnv,
-        )
-    finally:
-        if original_home is not None:
-            os.environ["HOME"] = original_home
-        else:
-            os.environ.pop("HOME", None)
-
-    return (
-        OpenSecTradeContext,
-        RET_OK,
-        SecurityFirm,
-        SysConfig,
-        TrdAccStatus,
-        TrdAccType,
-        TrdMarket,
-        TrdEnv,
-    )
-
-
-(
-    OpenSecTradeContext,
-    RET_OK,
-    SecurityFirm,
-    SysConfig,
-    TrdAccStatus,
-    TrdAccType,
-    TrdMarket,
-    TrdEnv,
-) = _load_moomoo_components()
+from moomoo import (
+OpenSecTradeContext,
+RET_OK,
+SysConfig,
+TrdMarket,
+TrdEnv,
+)
 
 
 def normalize_trd_env(value: object) -> Optional[str]:
@@ -82,8 +41,6 @@ def should_encrypt(host: str) -> bool:
 
 
 def resolve_rsa_key_path() -> Optional[Path]:
-    from .config import PROJECT_ROOT  # local import
-
     candidates = []
     env_path = os.getenv("MOOMOO_RSA_KEY_PATH")
     if env_path:
@@ -120,7 +77,7 @@ def configure_encryption(is_encrypt: bool) -> bool:
     return True
 
 
-def unlock_trade_context(trade_ctx: "OpenSecTradeContext") -> None:
+def unlock_trade_context(trade_ctx: OpenSecTradeContext) -> None:
     password = get_trading_password()
     if not password:
         return
@@ -130,7 +87,7 @@ def unlock_trade_context(trade_ctx: "OpenSecTradeContext") -> None:
 
 
 def get_positions(
-    trade_ctx: "OpenSecTradeContext",
+    trade_ctx: OpenSecTradeContext,
     acc_id: int,
     trd_env: str = TrdEnv.REAL,
     position_market: str = TrdMarket.US,
@@ -208,4 +165,4 @@ def get_trading_password() -> str:
     value = os.getenv("MOOMOO_TRADE_PASSWORD", "")
     if isinstance(value, str):
         value = value.strip()
-    return value if value else DEFAULT_TRADE_PASSWORD
+    return value if value else ""
