@@ -4,18 +4,8 @@ from __future__ import annotations
 
 import os
 
-from alpha_trader.formatting import (
-    enum_to_string,
-    format_money,
-    format_percentage,
-    format_price,
-    format_quantity,
-)
 from alpha_trader.moomoo_helpers import (
-    TrdEnv,
     configure_encryption,
-    get_account_positions,
-    get_trading_accounts,
     should_encrypt,
 )
 from alpha_trader.quote_helpers import fetch_watchlists
@@ -37,7 +27,7 @@ def main() -> None:
         return
 
     if not watchlists:
-        print("\nNo watchlists found.")
+        print("\nNo watchlists found.\n")
     else:
         print("\nWatchlists:\n")
         for group, securities in watchlists:

@@ -7,8 +7,7 @@ import os
 from pathlib import Path
 from typing import Dict, Optional, Tuple
 
-from .config import DEFAULT_RSA_KEY_PATH, get_trading_password
-
+from .config import DEFAULT_RSA_KEY_PATH 
 
 def _load_moomoo_components() -> Tuple[object, ...]:
     """Import moomoo after pointing HOME to a writable path for its log files."""
@@ -203,3 +202,10 @@ def get_account_positions(
     finally:
         if trade_ctx is not None:
             trade_ctx.close()
+
+def get_trading_password() -> str:
+    """Return the trade password to unlock live accounts."""
+    value = os.getenv("MOOMOO_TRADE_PASSWORD", "")
+    if isinstance(value, str):
+        value = value.strip()
+    return value if value else DEFAULT_TRADE_PASSWORD
