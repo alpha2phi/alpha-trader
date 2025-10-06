@@ -1,0 +1,102 @@
+Category,Ticker,Name
+Major Index & ETF Products,.SPX,S&P 500 Index
+Major Index & ETF Products,.XSP,Mini S&P 500 Index
+Major Index & ETF Products,GLD,SPDR Gold ETF
+Major Index & ETF Products,IWM,iShares Russell 2000 ETF
+Major Index & ETF Products,QQQ,Invesco QQQ Trust
+Major Index & ETF Products,SOXL,Direxion Daily Semiconductor Bull 3x ETF
+Major Index & ETF Products,SOXX,iShares Semiconductor ETF
+Major Index & ETF Products,SPY,SPDR S&P 500 ETF
+Major Index & ETF Products,SQQQ,ProShares UltraPro Short QQQ
+Major Index & ETF Products,TLT,iShares 20+ Year Treasury Bond ETF
+Major Index & ETF Products,TQQQ,ProShares UltraPro QQQ
+Major Index & ETF Products,VOO,Vanguard S&P 500 ETF
+Major Index & ETF Products,XLE,Energy Select Sector SPDR
+Major Index & ETF Products,XOP,SPDR S&P Oil & Gas Exploration ETF
+Large Cap Tech & Software,AAPL,Apple
+Large Cap Tech & Software,ADBE,Adobe
+Large Cap Tech & Software,AMD,Advanced Micro Devices
+Large Cap Tech & Software,AMZN,Amazon
+Large Cap Tech & Software,ASML,ASML Holding
+Large Cap Tech & Software,CRM,Salesforce
+Large Cap Tech & Software,GOOGL,Alphabet A
+Large Cap Tech & Software,GOOG,Alphabet C
+Large Cap Tech & Software,INTC,Intel
+Large Cap Tech & Software,META,Meta Platforms
+Large Cap Tech & Software,MSFT,Microsoft
+Large Cap Tech & Software,NFLX,Netflix
+Large Cap Tech & Software,NVDA,NVIDIA
+Large Cap Tech & Software,PANW,Palo Alto Networks
+Large Cap Tech & Software,SNPS,Synopsys
+Large Cap Tech & Software,SPOT,Spotify
+Large Cap Tech & Software,TSM,Taiwan Semiconductor
+"Finance, Payments & Brokers",AXP,American Express
+"Finance, Payments & Brokers",BX,Blackstone
+"Finance, Payments & Brokers",IBKR,Interactive Brokers
+"Finance, Payments & Brokers",PYPL,PayPal
+"Finance, Payments & Brokers",V,Visa
+"Energy, Commodities & Crypto Proxies",BITX,2x Bitcoin Strategy ETF
+"Energy, Commodities & Crypto Proxies",BTCUSD,Bitcoin
+"Energy, Commodities & Crypto Proxies",COIN,Coinbase
+"Energy, Commodities & Crypto Proxies",CVX,Chevron
+"Energy, Commodities & Crypto Proxies",ETH,Ethereum
+"Energy, Commodities & Crypto Proxies",OIH,VanEck Oil Services ETF
+"Energy, Commodities & Crypto Proxies",OKE,ONEOK
+"Energy, Commodities & Crypto Proxies",XOM,ExxonMobil
+"Industrials, Aerospace & Defense",CAT,Caterpillar
+"Industrials, Aerospace & Defense",GE,GE Aerospace
+"Industrials, Aerospace & Defense",LMT,Lockheed Martin
+Consumer & Retail,COST,Costco
+Consumer & Retail,ETSY,Etsy
+Consumer & Retail,KO,Coca-Cola
+Consumer & Retail,LULU,Lululemon Athletica
+Consumer & Retail,MCD,McDonald’s
+Consumer & Retail,NKE,Nike
+Consumer & Retail,RBLX,Roblox
+Consumer & Retail,TGT,Target
+Consumer & Retail,WMT,Walmart
+Healthcare & Pharma,EL,Estee Lauder
+Healthcare & Pharma,JNJ,Johnson & Johnson
+Healthcare & Pharma,LLY,Eli Lilly
+Healthcare & Pharma,PFE,Pfizer
+Healthcare & Pharma,UNH,UnitedHealth
+"Real Estate, Utilities & Staples",AWK,American Water Works
+"Real Estate, Utilities & Staples",DUK,Duke Energy
+"Real Estate, Utilities & Staples",LOW,Lowe’s
+"Real Estate, Utilities & Staples",WM,Waste Management
+Smaller / High Growth / Speculative Tech,CRCL,Circle
+Smaller / High Growth / Speculative Tech,CRWV,CoreWeave
+Smaller / High Growth / Speculative Tech,DUOL,Duolingo
+Smaller / High Growth / Speculative Tech,DXYZ,Destiny Tech100
+Smaller / High Growth / Speculative Tech,FIG,Figma
+Smaller / High Growth / Speculative Tech,HOOD,Robinhood
+Smaller / High Growth / Speculative Tech,MSTR,MicroStrategy
+Smaller / High Growth / Speculative Tech,ONON,On Holding
+Smaller / High Growth / Speculative Tech,PLTR,Palantir
+Smaller / High Growth / Speculative Tech,RDDT,Reddit
+Smaller / High Growth / Speculative Tech,RXT,Rackspace Technology
+Smaller / High Growth / Speculative Tech,SYMM,Symbotic
+Smaller / High Growth / Speculative Tech,U,Unity Software
+Smaller / High Growth / Speculative Tech,UPST,Upstart
+Biotech & MedTech,MRNA,Moderna
+Biotech & MedTech,NVO,Novo Nordisk
+Biotech & MedTech,RMD,ResMed
+Biotech & MedTech,TEM,Tempus AI
+Biotech & MedTech,VEEV,Veeva Systems
+Speculative / Low Float / Meme,NMAX,Newsmax
+Speculative / Low Float / Meme,OKLO,Oklo Inc
+Speculative / Low Float / Meme,QUBT,Quantum Computing
+Speculative / Low Float / Meme,RGTI,Rigetti Computing
+Speculative / Low Float / Meme,SATS,EchoStar
+Speculative / Low Float / Meme,SMCI,Super Micro Computer
+Speculative / Low Float / Meme,SOL,Solana
+Speculative / Low Float / Meme,XYZ,Block
+Misc / Diversified,ACN,Accenture
+Misc / Diversified,ADSK,Autodesk
+Misc / Diversified,AMAT,Applied Materials
+Misc / Diversified,ANET,Arista Networks
+Misc / Diversified,CPRT,Copart
+Misc / Diversified,LEN,Lennar
+Misc / Diversified,MELI,MercadoLibre
+Misc / Diversified,PEP,PepsiCo
+Misc / Diversified,SPGI,S&P Global

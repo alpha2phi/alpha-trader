@@ -7,12 +7,12 @@ import os
 from pathlib import Path
 from typing import Dict, Optional, Tuple
 
-from config import DEFAULT_RSA_KEY_PATH, get_trading_password
+from .config import DEFAULT_RSA_KEY_PATH, get_trading_password
 
 
 def _load_moomoo_components() -> Tuple[object, ...]:
     """Import moomoo after pointing HOME to a writable path for its log files."""
-    from config import PROJECT_ROOT  # local import to avoid circular
+    from .config import PROJECT_ROOT  # local import to avoid circular
 
     log_home = Path(PROJECT_ROOT) / ".moomoo_home"
     log_home.mkdir(parents=True, exist_ok=True)
@@ -83,7 +83,7 @@ def should_encrypt(host: str) -> bool:
 
 
 def resolve_rsa_key_path() -> Optional[Path]:
-    from config import PROJECT_ROOT  # local import
+    from .config import PROJECT_ROOT  # local import
 
     candidates = []
     env_path = os.getenv("MOOMOO_RSA_KEY_PATH")

@@ -5,7 +5,7 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).resolve().parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_RSA_KEY_PATH = PROJECT_ROOT / "conn_key.txt"
 ENV_FILE_PATH = PROJECT_ROOT / ".env"
 TRADE_PASSWORD_ENV = "MOOMOO_TRADE_PASSWORD"
