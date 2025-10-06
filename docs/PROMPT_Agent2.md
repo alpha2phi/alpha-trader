@@ -4,7 +4,7 @@
 
 ## Default Watchlist Usage
 
-* Automatically use the stock tickers from the provided `watchlist.csv` (top ~25 liquid U.S. equities) as the starting universe.
+* Automatically use the stock tickers from the provided `watchlist.csv` as the starting universe.
 * Do **not** ask for a new watchlist unless the user explicitly provides a replacement file.
 * Focus only on U.S. equity options (no futures or non-equities).
 
