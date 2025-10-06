@@ -18,6 +18,7 @@ from alpha_trader.moomoo_helpers import (
     get_trading_accounts,
     should_encrypt,
 )
+from alpha_trader.quote_helpers import fetch_watchlists
 
 
 def main() -> None:
@@ -29,66 +30,24 @@ def main() -> None:
     except Exception as exc:
         print(f"Failed to configure encryption: {exc}")
         return
-
     try:
-        accounts = get_trading_accounts(host, port, use_encryption)
+        watchlists = fetch_watchlists(host, port)
     except Exception as exc:
-        print(f"Failed to retrieve trading accounts: {exc}")
+        print(f"Failed to retrieve watchlists: {exc}")
         return
 
-    if accounts.empty:
-        print("No trading accounts returned by OpenD.")
-        return
-
-    try:
-        positions_by_account = get_account_positions(
-            host, port, use_encryption, accounts)
-    except Exception as exc:
-        print(f"Failed to retrieve account positions: {exc}")
-        return
-
-    print("Positions:\n")
-    any_positions = False
-
-    for record in accounts.to_dict(orient="records"):
-        env = enum_to_string(record.get("trd_env"), TrdEnv.to_string2)
-        acc_id_value = record.get("acc_id")
-        try:
-            acc_id_key = int(acc_id_value)
-        except (TypeError, ValueError):
-            acc_id_key = None
-
-        print(f"Account {acc_id_value} ({env}):")
-        if acc_id_key is None:
-            print("  Unable to determine account identifier.")
-            continue
-
-        positions_df = positions_by_account.get(acc_id_key)
-        if positions_df is None:
-            print("  Unable to load US positions for this account.")
-            continue
-
-        if positions_df.empty:
-            print("  No US positions.")
-            continue
-
-        any_positions = True
-        for position in positions_df.to_dict(orient="records"):
-            code = position.get("code") or "N/A"
-            side = position.get("position_side") or "N/A"
-            qty = format_quantity(position.get("qty"))
-            avg_cost = format_price(position.get("average_cost"))
-            market_val = format_money(position.get("market_val"))
-            pl_val = format_money(position.get("pl_val"))
-            pl_pct = format_percentage(position.get("pl_ratio"))
-
-            print(
-                f"  - {code} ({side}) | qty={qty} | cost={avg_cost} | "
-                f"mv={market_val} | pl={pl_val} | pl%={pl_pct}"
-            )
-
-    if not any_positions:
-        print("No US positions across all accounts.")
+    if not watchlists:
+        print("\nNo watchlists found.")
+    else:
+        print("\nWatchlists:\n")
+        for group, securities in watchlists:
+            list_name = group.get("name") or group.get(
+                "group_name") or "Unnamed Group"
+            print(f"- {list_name} ({len(securities)} items)")
+            for item in securities:
+                code = item.get("code") or "N/A"
+                display = item.get("name") or item.get("stock_name") or "N/A"
+                print(f"  - {code} {display}")
 
 
 if __name__ == "__main__":
