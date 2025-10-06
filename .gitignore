@@ -3,6 +3,9 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Local credentials / keys
+conn_key.txt
+
 # C extensions
 *.so
 
