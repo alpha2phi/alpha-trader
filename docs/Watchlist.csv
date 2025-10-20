@@ -1,7 +1,4 @@
 Symbol
-SPX
-VIX
-XSP
 AAPL
 ABNB
 ACN
@@ -9,10 +6,13 @@ ADBE
 ADSK
 AEP
 AFRM
+ALAB
 AMAT
 AMD
 AMZN
 ANET
+APLD
+APP
 ASML
 ASTS
 AVGO
@@ -20,6 +20,7 @@ AWK
 AXP  
 B  
 BABA  
+BITX
 BLK  
 BLSH  
 BRK.B  
@@ -74,6 +75,7 @@ LLY
 LMT  
 LOW  
 LVMUY  
+MARA
 MCD  
 MELI  
 META  
@@ -126,6 +128,7 @@ SOXL
 SOXX  
 SPGI  
 SPOT  
+SPX
 SPY  
 SQQQ  
 TCOM  
@@ -148,6 +151,7 @@ USAR
 UTHR  
 V  
 VEEV  
+VIX
 VOO  
 VRT  
 WM  
@@ -155,5 +159,5 @@ WMT
 XLE  
 XOM  
 XOP  
+XSP
 XYZ
-
