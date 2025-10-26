@@ -1,1 +1,3 @@
+faiss
+fastapi
 moomoo-api
