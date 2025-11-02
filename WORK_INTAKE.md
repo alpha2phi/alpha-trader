@@ -97,14 +97,12 @@ end
 
 subgraph A[Automation Team]
 direction TB
-  A1[Align on automation needs
-Policy as code and pipelines and rollout consistency]:::auto
+  A1[Align on automation needs]:::auto
 end
 
-subgraph G[GIS or Security Team]
+subgraph G[GIS Team]
 direction TB
-  S1[Align on security requirements
-GIS guidelines and hardening]:::gis
+  S1[Align on security requirements]:::gis
 end
 
 %% ===== FLOW TOP DOWN =====
@@ -123,7 +121,7 @@ E6 --> R3
 R3 -->|Defects found| E7 --> R3
 R3 -->|Pass| R4
 
-R4 -->|New or changed scope| E8 --> R3
+R4 -->|New/changed requirements| E8 --> R3
 R4 -->|No changes| E9 --> R5
 
 ```
