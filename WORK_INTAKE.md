@@ -1,5 +1,5 @@
 ## **1. Request Submission**
-- **Requestor** submits a work request with **clear requirements and defined scope**.
+- **Requestor** submits a work request with **clear and complete requirements and scope**. 
 - **Requestor** makes sure the submitted requirements **must align** with the following standards and guidelines:  
   - **AIA Standards** – including details from **CPP** with **ITSR** document number.  
   - **GIS Guidelines** – such as **PaaS Hardening** or other security guidelines. 
@@ -14,16 +14,16 @@
 ---
 
 ## **2. Requirement Assessment**
-- **Engineering Team** reviews the submitted request for completeness, alignment, and feasibility.  Incomplete or unclear requirements will be rejected and requestor needs to submit a new new request.
-- The team seeks clarification where needed and confirms whether to **proceed** or **stop** the request 
+- **Engineering Team** reviews the submitted request for completeness, alignment, and feasibility.  Incomplete or unclear requirements will be rejected and requestor needs to submit a new request.
+- The team seeks clarification where needed and confirms whether to **proceed** or **stop** the request. 
 
 ---
 
 ## **3. Effort Estimation & Planning**
 - Once the request is approved to proceed, **Engineering Team**:  
-  - Provides **effort estimation** and a **delivery timeline**,  
   - Identifies dependencies (e.g., Automation or GIS teams),  
-  - Documents key **assumptions and risks**.  
+  - Documents key **assumptions and risks**,  
+  - Provides **effort estimation** and a **delivery timeline**.  
 
 ---
 
@@ -57,54 +57,57 @@
 
 ---
 
-<div style="zoom: 150%">
+## Process Flow
 
 ```mermaid
-flowchart LR
-%% ===================== STYLING =====================
+
+flowchart TD
+%% ===== STYLES =====
 classDef req fill:#e8f2ff,stroke:#1d4ed8,stroke-width:1px,rx:6,ry:6;
 classDef eng fill:#fff3e0,stroke:#f97316,stroke-width:1px,rx:6,ry:6;
 classDef auto fill:#ecfdf5,stroke:#16a34a,stroke-width:1px,rx:6,ry:6;
 classDef gis fill:#f3e8ff,stroke:#7e22ce,stroke-width:1px,rx:6,ry:6;
 classDef gate fill:#ffffff,stroke:#111827,stroke-dasharray:3 3,rx:8,ry:8;
 
-%% ===================== SWIMLANES =====================
+%% ===== SWIMLANES =====
 subgraph R[Requestor]
 direction TB
-  R1[Submit work request<br/>with clear requirements and scope]:::req
-  R1a[Ensure alignment<br/>AIA CPP and ITSR document number<br/>GIS PaaS Hardening or security guidelines<br/>Group Architecture Standards<br/>Regular Maintenance Azure service EOL policy updates Kubernetes version App Service Python<br/>Regular Maintenance Data refresh Cost Center WBSCode<br/>Other considerations Cost optimization and Service EOL tracking]:::req
-  R2[Provide clarifications or resubmit<br/>if rejected or unclear]:::req
+  R1[Submit work request]:::req
+  R1a[Ensure alignment]:::req
+  R2[Provide clarifications or<br/>resubmit if<br/>rejected or unclear]:::req
   R3[Perform UAT testing]:::req
-  R4[Request scope changes if any]:::req
-  R5[Confirm acceptance and closure]:::req
+  R4[Request scope changes<br/>if any]:::req
+  R5[Confirm acceptance <br/>and closure]:::req
 end
 
 subgraph E[Engineering Team]
 direction TB
-  E1[Review for completeness alignment and feasibility]:::eng
+  E1[Review for completeness <br/> and alignment]:::eng
   G1{Complete and clear}:::gate
   E2[Confirm proceed or stop]:::eng
   G2{Proceed}:::gate
-  E3[Effort estimate and delivery timeline]:::eng
-  E4[Identify dependencies Automation or GIS]:::eng
-  E5[Document assumptions and risks]:::eng
-  E6[Implement approved requirements]:::eng
-  E7[Fix defects reported in UAT]:::eng
-  E8[Reassess change impact and update estimate and timeline]:::eng
-  E9[Finalize and handover documentation<br/>Update policy tracker<br/>Update GitHub project dashboard and issue tracker]:::eng
+  E3[Identify dependencies]:::eng
+  E4[Document assumptions<br/>and risks]:::eng
+  E5[Provide estimate]:::eng
+  E6[Implement approved<br/>requirements]:::eng
+  E7[Fix defects from UAT]:::eng
+  E8[Reassess and update<br/>estimate and timeline]:::eng
+  E9[Finalize and handover]:::eng
 end
 
 subgraph A[Automation Team]
 direction TB
-  A1[Align on automation needs policy as code pipelines rollout consistency]:::auto
+  A1[Align on automation needs
+Policy as code and pipelines and rollout consistency]:::auto
 end
 
 subgraph G[GIS or Security Team]
 direction TB
-  S1[Align on security requirements GIS guidelines and hardening]:::gis
+  S1[Align on security requirements
+GIS guidelines and hardening]:::gis
 end
 
-%% ===================== FLOW =====================
+%% ===== FLOW TOP DOWN =====
 R1 --> R1a --> E1
 E1 --> G1
 G1 -- "No" --> R2 --> E1
@@ -124,4 +127,3 @@ R4 -->|New or changed scope| E8 --> R3
 R4 -->|No changes| E9 --> R5
 
 ```
-</div>
