@@ -103,6 +103,15 @@
 - **[Entity 1]**: [What it represents, key attributes without implementation]
 - **[Entity 2]**: [What it represents, relationships to other entities]
 
+## Compatibility & Simplicity Constraints *(mandatory)*
+
+- **Existing Consumers**: [List CLIs, dashboards, alerts, or downstream systems that rely on
+  current behavior. Note schema/contract invariants.]
+- **Migration Plan**: [Describe additive vs. breaking steps, rollout order, and how users are
+  shielded from regressions.]
+- **Simplification Work**: [Document refactors/deletions that keep nesting/data structures clean;
+  explain how they prevent new special cases.]
+
 ## Data Sources & Compliance *(mandatory for every feature touching market data)*
 
 | Source | Purpose | Endpoint / Query Params | Refresh Cadence | Compliance / License Notes |

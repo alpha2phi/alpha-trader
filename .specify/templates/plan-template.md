@@ -30,16 +30,16 @@
 ## Constitution Check
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
-- **Data Fidelity Register**: List every market/sentiment/macro data source, endpoint, and
-  refresh cadence. Confirm credentials live in secrets storage, not specs.
-- **Analytics Contracts**: Define CLI entrypoint(s), input schema, and output fields for each
-  analytic engine. Flag any breaking contract changes with required migration steps.
-- **Scenario Slice**: Identify the primary user scenario (e.g., swing trader earnings play) and
-  show how scope is isolated to keep the slice independently shippable.
-- **Explainability & Observability**: Describe how the feature exposes rationale text to users
-  and how structured logs/metrics will surface ingest or indicator failures.
-- **Risk-Control Tests**: Outline pre-implementation contract/unit/integration tests plus any
-  golden datasets needed to verify numeric outputs.
+- **General Solution Proof**: Document the shared data structures/abstractions that eliminate
+  special cases and explain why they are preferable to additional branching.
+- **Compatibility Contract**: Identify every existing consumer/CLI impacted, list schema
+  invariants, and specify migrations + tests that enforce "Never Break Userspace".
+- **Pragmatic Scenario & Value**: Name the primary user workflow (e.g., swing trader earnings
+  play), why it matters now, and what scope boundaries keep it independently shippable.
+- **Simplicity & Complexity Risks**: Highlight any depth/nesting risks plus the refactors or
+  deletions needed to keep modules understandable before implementation begins.
+- **Domain Guardrails**: Register all data sources (provider, endpoint, cadence), secret storage
+  locations, caching/provenance plans, and compliance notes.
 
 ## Project Structure
 

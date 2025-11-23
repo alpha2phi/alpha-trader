@@ -46,15 +46,18 @@ description: "Task list template for feature implementation"
   ============================================================================
 -->
 
-## Phase 0: Data Provenance & Contracts (Non-Negotiable)
+## Phase 0: Guardrails & Contracts (Non-Negotiable)
 
-**Purpose**: Prove every data feed and analytic contract before touching feature code
+**Purpose**: Lock in provenance, compatibility promises, and simplification targets before
+touching feature code
 
 - [ ] T000 Register data sources + endpoints in specs/[feature]/spec.md (Data Sources table)
 - [ ] T000a Capture credential names + storage instructions in plan.md Constitution Check
-- [ ] T000b Scaffold CLI entrypoint(s) for analytics modules in cli/ or src/cli/
-- [ ] T000c Write failing contract tests with golden datasets in tests/contract/
-- [ ] T000d Document explainability text placeholders in README or docs/quickstart.md
+- [ ] T000b Scaffold CLI entrypoint(s) for analytics modules in cli/ or src/cli/ to prove the
+      general solution path
+- [ ] T000c Write failing compatibility/contract tests (existing consumers) in tests/contract/
+- [ ] T000d Record simplification/refactor tasks (what is being deleted/flattened) in plan.md
+      and docs/quickstart.md when UX impact exists
 
 **Checkpoint**: No downstream work until provenance evidence + failing tests exist.
 
