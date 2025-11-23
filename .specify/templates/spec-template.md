@@ -20,6 +20,9 @@
   - Demonstrated to users independently
 -->
 
+> **Scenario-First Reminder**: Each story describes one trading workflow end-to-end (e.g.,
+> "swing trader evaluates earnings momentum") and must remain shippable without other stories.
+
 ### User Story 1 - [Brief Title] (Priority: P1)
 
 [Describe this user journey in plain language]
@@ -99,6 +102,37 @@
 
 - **[Entity 1]**: [What it represents, key attributes without implementation]
 - **[Entity 2]**: [What it represents, relationships to other entities]
+
+## Data Sources & Compliance *(mandatory for every feature touching market data)*
+
+| Source | Purpose | Endpoint / Query Params | Refresh Cadence | Compliance / License Notes |
+|--------|---------|-------------------------|-----------------|---------------------------|
+| [e.g., Polygon] | [Technical candles] | [/v2/aggs/ticker/... ?timespan=1d] | [e.g., hourly] | [Link to license, rate-limit plan] |
+
+- Secrets storing credentials: `[ENV_VAR_NAME]`
+- Cache retention policy: [e.g., 24h, include invalidation trigger]
+- Provenance evidence to attach in release: [e.g., checksum log path]
+
+## Analytics Contracts & Explainability *(required for each analytic module)*
+
+- **Module Name**: [e.g., `cli/alpha_insights.py`]
+  - CLI invocation: `python -m cli.alpha_insights --ticker [symbol]`
+  - Inputs: [list of required schemas or indicator sets]
+  - Outputs: [structured fields returned + meaning]
+  - Explainability notes: [what rationale text must accompany each insight]
+
+Repeat the bullet block above for every fundamental, technical, sentiment, or AI component the
+feature touches.
+
+## Observability & Risk Controls *(describe monitoring + tests)*
+
+- Logs/metrics emitted per pipeline stage: [ingestion, feature engineering, inference,...]
+- Golden datasets + storage location: [path or fixture package]
+- Contract, unit, and integration tests planned (must fail before implementation):
+  - Contract: [description]
+  - Unit: [description]
+  - Integration: [description]
+- Alerting/notification expectations: [thresholds that block release]
 
 ## Success Criteria *(mandatory)*
 

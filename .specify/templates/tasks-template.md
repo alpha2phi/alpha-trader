@@ -17,6 +17,8 @@ description: "Task list template for feature implementation"
 - **[P]**: Can run in parallel (different files, no dependencies)
 - **[Story]**: Which user story this task belongs to (e.g., US1, US2, US3)
 - Include exact file paths in descriptions
+- Scenario slices stay independent: keep file overlap between stories to a minimum and document
+  any unavoidable crossover in the task description.
 
 ## Path Conventions
 
@@ -43,6 +45,18 @@ description: "Task list template for feature implementation"
   DO NOT keep these sample tasks in the generated tasks.md file.
   ============================================================================
 -->
+
+## Phase 0: Data Provenance & Contracts (Non-Negotiable)
+
+**Purpose**: Prove every data feed and analytic contract before touching feature code
+
+- [ ] T000 Register data sources + endpoints in specs/[feature]/spec.md (Data Sources table)
+- [ ] T000a Capture credential names + storage instructions in plan.md Constitution Check
+- [ ] T000b Scaffold CLI entrypoint(s) for analytics modules in cli/ or src/cli/
+- [ ] T000c Write failing contract tests with golden datasets in tests/contract/
+- [ ] T000d Document explainability text placeholders in README or docs/quickstart.md
+
+**Checkpoint**: No downstream work until provenance evidence + failing tests exist.
 
 ## Phase 1: Setup (Shared Infrastructure)
 
@@ -167,7 +181,7 @@ Examples of foundational tasks (adjust based on your project):
 - **Foundational (Phase 2)**: Depends on Setup completion - BLOCKS all user stories
 - **User Stories (Phase 3+)**: All depend on Foundational phase completion
   - User stories can then proceed in parallel (if staffed)
-  - Or sequentially in priority order (P1 → P2 → P3)
+  - Or sequentially in priority order (P1 -> P2 -> P3)
 - **Polish (Final Phase)**: Depends on all desired user stories being complete
 
 ### User Story Dependencies
@@ -221,10 +235,10 @@ Task: "Create [Entity2] model in src/models/[entity2].py"
 
 ### Incremental Delivery
 
-1. Complete Setup + Foundational → Foundation ready
-2. Add User Story 1 → Test independently → Deploy/Demo (MVP!)
-3. Add User Story 2 → Test independently → Deploy/Demo
-4. Add User Story 3 → Test independently → Deploy/Demo
+1. Complete Setup + Foundational -> Foundation ready
+2. Add User Story 1 -> Test independently -> Deploy/Demo (MVP!)
+3. Add User Story 2 -> Test independently -> Deploy/Demo
+4. Add User Story 3 -> Test independently -> Deploy/Demo
 5. Each story adds value without breaking previous stories
 
 ### Parallel Team Strategy

@@ -30,8 +30,16 @@
 ## Constitution Check
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
-
-[Gates determined based on constitution file]
+- **Data Fidelity Register**: List every market/sentiment/macro data source, endpoint, and
+  refresh cadence. Confirm credentials live in secrets storage, not specs.
+- **Analytics Contracts**: Define CLI entrypoint(s), input schema, and output fields for each
+  analytic engine. Flag any breaking contract changes with required migration steps.
+- **Scenario Slice**: Identify the primary user scenario (e.g., swing trader earnings play) and
+  show how scope is isolated to keep the slice independently shippable.
+- **Explainability & Observability**: Describe how the feature exposes rationale text to users
+  and how structured logs/metrics will surface ingest or indicator failures.
+- **Risk-Control Tests**: Outline pre-implementation contract/unit/integration tests plus any
+  golden datasets needed to verify numeric outputs.
 
 ## Project Structure
 
