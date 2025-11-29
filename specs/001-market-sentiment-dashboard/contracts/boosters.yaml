@@ -1,0 +1,48 @@
+openapi: 3.0.0
+info:
+  title: Boosters API
+  version: 0.1.0
+paths:
+  /api/boosters:
+    get:
+      summary: Get booster signals (10Y yield, breadth, macro events)
+      responses:
+        '200':
+          description: Booster signals
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Boosters'
+components:
+  schemas:
+    BoosterSignal:
+      type: object
+      properties:
+        name: { type: string }
+        value: { type: number }
+        unit: { type: string }
+        change: { type: number }
+        threshold_highlight: { type: string }
+        updated_at: { type: string, format: date-time }
+        cache_state: { type: string, enum: [fresh, stale] }
+        provider: { type: string }
+    MacroEvent:
+      type: object
+      properties:
+        title: { type: string }
+        datetime_utc: { type: string, format: date-time }
+        impact: { type: string }
+        source: { type: string }
+        updated_at: { type: string, format: date-time }
+    Boosters:
+      type: object
+      properties:
+        ten_year_yield:
+          $ref: '#/components/schemas/BoosterSignal'
+        breadth:
+          $ref: '#/components/schemas/BoosterSignal'
+        macro_events:
+          type: array
+          items:
+            $ref: '#/components/schemas/MacroEvent'
+      required: [ten_year_yield, breadth, macro_events]

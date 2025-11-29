@@ -31,4 +31,4 @@
 
 ## Notes
 
-- All items reviewed and passing as of 2025-11-29; no outstanding issues before planning.
+- Pending: add explicit acceptance criteria per functional requirement.

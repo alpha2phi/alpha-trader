@@ -5,6 +5,12 @@
 **Status**: Draft  
 **Input**: User description: "Start with fear and greed index, VIX, major index candlestick charts, and any other recommendable simple signals."
 
+## Clarifications
+
+### Session 2025-11-29
+
+- Q: How should providers be selected and failed over per signal? -> A: Set a priority order per signal with explicit fallback rules.
+
 ## User Scenarios & Testing *(mandatory)*
 
 <!--
@@ -119,6 +125,7 @@ A portfolio manager checks quick secondary signals—10Y Treasury yield, market 
 - Secrets storing credentials: `SENTIMENT_API_KEY`, `MARKET_DATA_API_KEY`, `MACRO_DATA_API_KEY` (or equivalents defined in env).
 - Cache retention policy: sentiment hourly, VIX and index/crypto candles 15 minutes, boosters daily; invalidate cache on manual refresh or TTL expiry.
 - Provenance evidence to attach in release: store raw provider responses with timestamps under `data/provenance/market-sentiment/`.
+- Provider strategy: document per-signal primary and fallback providers following the priority order approach above; fall back on failure while honoring rate limits and licensing.
 
 ## Analytics Contracts & Explainability *(required for each analytic module)*
 

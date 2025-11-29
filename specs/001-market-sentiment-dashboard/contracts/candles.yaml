@@ -1,0 +1,54 @@
+openapi: 3.0.0
+info:
+  title: Candles API
+  version: 0.1.0
+paths:
+  /api/candles:
+    get:
+      summary: Get OHLCV series for a symbol/timeframe
+      parameters:
+        - in: query
+          name: symbol
+          required: true
+          schema:
+            type: string
+            enum: ["^GSPC", "^IXIC", "^DJI", "BTC-USD", "ETH-USD", "SOL-USD"]
+        - in: query
+          name: timeframe
+          required: true
+          schema:
+            type: string
+            enum: ["1D", "1W", "1M"]
+      responses:
+        '200':
+          description: Candle series
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CandleSeries'
+        '404':
+          description: Symbol or timeframe not found
+components:
+  schemas:
+    Candle:
+      type: object
+      properties:
+        ts: { type: string, format: date-time }
+        open: { type: number }
+        high: { type: number }
+        low: { type: number }
+        close: { type: number }
+        volume: { type: number }
+    CandleSeries:
+      type: object
+      properties:
+        symbol: { type: string }
+        timeframe: { type: string }
+        timezone: { type: string }
+        cache_state: { type: string, enum: [fresh, stale] }
+        last_updated: { type: string, format: date-time }
+        ohlcv:
+          type: array
+          items:
+            $ref: '#/components/schemas/Candle'
+      required: [symbol, timeframe, ohlcv, cache_state, last_updated]
