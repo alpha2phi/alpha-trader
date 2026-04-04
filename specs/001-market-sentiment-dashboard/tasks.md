@@ -7,20 +7,20 @@
 
 ## Phase 1: Setup
 
-- [ ] T001 Ensure backend/ and frontend/ project scaffolds align with plan in backend/ and frontend/
-- [ ] T002 Add environment template with Redis/Postgres/provider keys in backend/.env.example
-- [ ] T003 [P] Add environment template with API base URL in frontend/.env.example.local
+- [X] T001 Ensure backend/ and frontend/ project scaffolds align with plan in backend/ and frontend/
+- [X] T002 Add environment template with Redis/Postgres/provider keys in backend/.env.example
+- [X] T003 [P] Add environment template with API base URL in frontend/.env.example.local
 
 ## Phase 2: Foundational
 
-- [ ] T004 Configure base FastAPI app wiring and health route in backend/src/api/__init__.py
-- [ ] T005 Establish Redis/Postgres connection helpers and settings in backend/src/services/config.py
-- [ ] T006 [P] Implement cache wrapper with TTL/stale calculation in backend/src/services/cache.py
-- [ ] T007 [P] Define shared provider priority config per signal in backend/src/services/provider_registry.py
-- [ ] T008 Create core Pydantic models from data-model in backend/src/models/market.py
-- [ ] T009 Add provenance writer (DB + file drop) in backend/src/services/provenance.py
-- [ ] T010 [P] Set up React Query client/provider and API base client in frontend/src/services/api-client.ts
-- [ ] T011 Add shared UI states (loading/error/stale badge components) in frontend/src/components/shared/status.tsx
+- [X] T004 Configure base FastAPI app wiring and health route in backend/src/api/__init__.py
+- [X] T005 Establish Redis/Postgres connection helpers and settings in backend/src/services/config.py
+- [X] T006 [P] Implement cache wrapper with TTL/stale calculation in backend/src/services/cache.py
+- [X] T007 [P] Define shared provider priority config per signal in backend/src/services/provider_registry.py
+- [X] T008 Create core Pydantic models from data-model in backend/src/models/market.py
+- [X] T009 Add provenance writer (DB + file drop) in backend/src/services/provenance.py
+- [X] T010 [P] Set up React Query client/provider and API base client in frontend/src/services/api-client.ts
+- [X] T011 Add shared UI states (loading/error/stale badge components) in frontend/src/components/shared/status.tsx
 
 ## Phase 3: User Story 1 - Sentiment Snapshot (Priority: P1) 🎯 MVP
 
@@ -29,18 +29,18 @@
 
 ### Tests for User Story 1
 
-- [ ] T012 [P] [US1] Write contract test for GET /api/sentiment in backend/tests/contract/test_sentiment.py
-- [ ] T013 [P] [US1] Write integration test simulating provider outage + cache fallback in backend/tests/integration/test_sentiment_fallback.py
+- [X] T012 [P] [US1] Write contract test for GET /api/sentiment in backend/tests/contract/test_sentiment.py
+- [X] T013 [P] [US1] Write integration test simulating provider outage + cache fallback in backend/tests/integration/test_sentiment_fallback.py
 
 ### Implementation for User Story 1
 
-- [ ] T014 [P] [US1] Implement sentiment provider client(s) with fallback order in backend/src/services/providers/sentiment.py
-- [ ] T015 [P] [US1] Implement volatility (VIX) client with fallback order in backend/src/services/providers/volatility.py
-- [ ] T016 [US1] Implement sentiment service (cache + provenance) in backend/src/services/sentiment_service.py
-- [ ] T017 [US1] Expose /api/sentiment FastAPI router returning snapshot schema in backend/src/api/sentiment.py
-- [ ] T018 [US1] Build sentiment cards with freshness/stale badges and retry in frontend/src/components/sentiment/SentimentCards.tsx
-- [ ] T019 [P] [US1] Wire frontend data hook for sentiment (React Query) in frontend/src/services/hooks/useSentiment.ts
-- [ ] T020 [US1] Add page section integration for sentiment cards in frontend/src/pages/index.tsx
+- [X] T014 [P] [US1] Implement sentiment provider client(s) with fallback order in backend/src/services/providers/sentiment.py
+- [X] T015 [P] [US1] Implement volatility (VIX) client with fallback order in backend/src/services/providers/volatility.py
+- [X] T016 [US1] Implement sentiment service (cache + provenance) in backend/src/services/sentiment_service.py
+- [X] T017 [US1] Expose /api/sentiment FastAPI router returning snapshot schema in backend/src/api/sentiment.py
+- [X] T018 [US1] Build sentiment cards with freshness/stale badges and retry in frontend/src/components/sentiment/SentimentCards.tsx
+- [X] T019 [P] [US1] Wire frontend data hook for sentiment (React Query) in frontend/src/services/hooks/useSentiment.ts
+- [X] T020 [US1] Add page section integration for sentiment cards in frontend/src/pages/index.tsx
 
 ## Phase 4: User Story 2 - Cross-Market Candles (Priority: P2)
 
