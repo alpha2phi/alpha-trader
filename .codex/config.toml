@@ -1,4 +1,5 @@
 model = "gpt-5.1-codex-max"
+personality = "pragmatic"
 [projects."/home/alpha2phi/workspace/development/alpha2phi/alpha-trader"]
 trust_level = "trusted"
 
