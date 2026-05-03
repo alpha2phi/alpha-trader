@@ -1,3 +1,3 @@
- # alpha-trader 🚀
+# alpha-trader 🚀
 
- AI agent for investing and trading.
+AI agent for investing and trading.
