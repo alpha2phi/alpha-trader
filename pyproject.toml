@@ -1,9 +1,17 @@
-[project]
+j[project]
 name = "alpha-trader"
 version = "0.1.0"
 description = "Smart investing and trading with AI agents"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "matplotlib>=3.10.9",
     "moomoo-api>=10.4.6408",
+    "mplfinance>=0.12.10b0",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=2.1.0",
+    "ruff>=0.15.14",
 ]
