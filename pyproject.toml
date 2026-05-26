@@ -1,4 +1,4 @@
-j[project]
+[project]
 name = "alpha-trader"
 version = "0.1.0"
 description = "Smart investing and trading with AI agents"
